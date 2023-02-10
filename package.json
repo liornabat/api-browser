@@ -1,6 +1,6 @@
 {
-  "homepage": "http://eddrichjanzzen.github.io/postman-clone-react",
-  "name": "postman-clone-react",
+
+  "name": "api-browser",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
