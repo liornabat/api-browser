@@ -28,7 +28,7 @@ const AddKeyValue = ({ keyPair, setKeyPair, onKeyPairRemove }) => {
 
     setKeyPair(debouncedKeyValue);
 
-  }, [debouncedKeyValue, setKeyPair])
+  }, [])
 
 
   const handleOnChange = (e) => {

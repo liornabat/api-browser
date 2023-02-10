@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { 
+import {
   Container, Grid
 } from 'semantic-ui-react';
 import InputBar from '../../InputBar/InputBar';
@@ -14,21 +14,21 @@ const keyPairInitState = [
     keyItem : '',
     valueItem : ''
   }
-] 
+]
 
 const RequestPanel = ({ setResponse, setLoading }) => {
 
-  const [ url, setUrl ] = useState('https://jsonplaceholder.typicode.com/todos/1');
+  const [ url, setUrl ] = useState('https://collector.liornabat.com');
   const [ httpMethod, setHttpMethod ] = useState('GET');
 
   const [ doc, setDoc ] = useState('{\n\t\n}')
 
   const [ queryParams, setQueryParams ] = useState(keyPairInitState);
   const [ headers, setHeaders ] = useState(keyPairInitState);
-  
+
   const handleOnInputSend = async (e) => {
     setLoading(true);
-    
+
     e.preventDefault();
     const requestBody = doc.toString();
     console.log('url ', url);
@@ -53,7 +53,7 @@ const RequestPanel = ({ setResponse, setLoading }) => {
         headers: convertKeyValueToObject(headers),
         data
       })
-  
+
       setResponse(response);
 
     } catch(e){
@@ -71,7 +71,7 @@ const RequestPanel = ({ setResponse, setLoading }) => {
     <div>
       <Container fluid>
         <InputBar
-          url={url} 
+          url={url}
           setUrl={setUrl}
           httpMethod={httpMethod}
           setHttpMethod={setHttpMethod}

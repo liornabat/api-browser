@@ -1,7 +1,7 @@
 import React from 'react';
-import { 
-  Input, 
-  Segment, 
+import {
+  Input,
+  Segment,
   Select,
   Button,
 } from 'semantic-ui-react'
@@ -34,7 +34,7 @@ const inputConfig = [
       text: 'DELETE',
       value: 'DELETE'
     }
-  ] 
+  ]
 
 const size = 'large';
 const color = 'orange';
@@ -52,19 +52,21 @@ const InputBar = ({ url, setUrl, httpMethod, setHttpMethod, onInputSend }) => {
             <div className="selection">
               <Select
                 compact
-                defaultValue={httpMethod} 
+                defaultValue={httpMethod}
                 options={inputConfig}
                 onChange={(_e, data)=> setHttpMethod(data.value)} />
             </div>
-            <input 
-                value={url} 
-                onChange={(e) => setUrl(e.target.value)}
-              />   
+            <input
+                value={url}
+                onChange={(e) => setUrl(e.target.value)
+                }
+
+              />
             <div className="button">
               <Button
                 basic
                 color={color}
-                size={size} 
+                size={size}
                 onClick={(e)=> onInputSend(e)}>
                   Send
               </Button>
