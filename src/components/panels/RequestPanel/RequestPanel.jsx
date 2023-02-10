@@ -18,7 +18,7 @@ const keyPairInitState = [
 
 const RequestPanel = ({ setResponse, setLoading }) => {
 
-  const [ url, setUrl ] = useState('https://collector.liornabat.com');
+  const [ url, setUrl ] = useState('https://collector.liornabat.com:16500/health');
   const [ httpMethod, setHttpMethod ] = useState('GET');
 
   const [ doc, setDoc ] = useState('{\n\t\n}')
