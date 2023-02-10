@@ -16,9 +16,9 @@ const CodeMirrorEditorPane = ({ doc, setDoc, isEditable=true }) => {
 
   const editorRef = useRef();
 
-  useEffect(() => {  
+  useEffect(() => {
     if(editorRef.current === null) return;
-    
+
     const state = EditorState.create({
       doc: doc,
       extensions: [
@@ -41,7 +41,7 @@ const CodeMirrorEditorPane = ({ doc, setDoc, isEditable=true }) => {
       view.destroy();
     }
 
-  }, [editorRef.current, doc])
+  }, [doc,isEditable, setDoc])
 
 
   return (

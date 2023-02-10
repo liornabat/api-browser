@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { 
-  Input, 
+import {
+  Input,
   Button,
   Grid
 } from 'semantic-ui-react';
@@ -12,7 +12,7 @@ const AddKeyValue = ({ keyPair, setKeyPair, onKeyPairRemove }) => {
   const [debouncedKeyValue, setDebouncedKeyValue] = useState(keyValue);
 
   useEffect(()=> {
-    
+
     const timerId = setTimeout(() => {
       setDebouncedKeyValue(keyValue);
     }, 1000);
@@ -28,7 +28,7 @@ const AddKeyValue = ({ keyPair, setKeyPair, onKeyPairRemove }) => {
 
     setKeyPair(debouncedKeyValue);
 
-  }, [debouncedKeyValue])
+  }, [debouncedKeyValue, setKeyPair])
 
 
   const handleOnChange = (e) => {
@@ -43,7 +43,7 @@ const AddKeyValue = ({ keyPair, setKeyPair, onKeyPairRemove }) => {
 
   return (
     <div className="add-key-value">
-      <Grid 
+      <Grid
         divided='vertically'>
         <Grid.Row
           columns={3}>
@@ -51,8 +51,8 @@ const AddKeyValue = ({ keyPair, setKeyPair, onKeyPairRemove }) => {
             computer={7}
             tablet={6}
             mobile={5}>
-            <Input 
-              fluid 
+            <Input
+              fluid
               placeholder='Key'
               name='keyItem'
               onChange={(e) => handleOnChange(e)}/>
@@ -62,8 +62,8 @@ const AddKeyValue = ({ keyPair, setKeyPair, onKeyPairRemove }) => {
             computer={7}
             tablet={6}
             mobile={5}>
-            <Input 
-              fluid 
+            <Input
+              fluid
               placeholder='Value'
               name='valueItem'
               onChange={(e) => handleOnChange(e)}/>
